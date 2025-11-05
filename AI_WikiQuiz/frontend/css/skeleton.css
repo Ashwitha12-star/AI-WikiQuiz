@@ -1,0 +1,77 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8fafc;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: white;
+  text-align: center;
+  font-weight: 600;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+}
+
+nav button {
+  border: none;
+  background: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #444;
+}
+
+nav button.active {
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+section {
+  display: none;
+  padding: 25px;
+  max-width: 850px;
+  margin: auto;
+}
+
+section.active {
+  display: block;
+}
+
+.quizCard {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  margin-top: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.option-btn {
+  background: #f2f5fa;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.option-btn.correct {
+  background: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+.option-btn.wrong {
+  background: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}

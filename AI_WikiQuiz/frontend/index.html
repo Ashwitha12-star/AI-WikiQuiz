@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WikiQuiz | AI-powered Quiz Generator</title>
+  <link rel="stylesheet" href="css/skeleton.css" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f9fafc;
+      color: #222;
+      margin: 0;
+    }
+    header {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f7f7f7;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      gap: 5px;
+    }
+    nav button {
+      border: none;
+      background: none;
+      padding: 10px 25px;
+      cursor: pointer;
+      font-size: 16px;
+      color: #333;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    nav button.active {
+      background: #4a90e2;
+      color: #fff;
+    }
+    #clearHistoryBtn {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #clearHistoryBtn:hover {
+      background: #b02a37;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section.active {
+      display: block;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    #wikiUrl {
+      width: 70%;
+      border: 1px solid #ccc;
+    }
+    #generateBtn {
+      background: #4a90e2;
+      color: white;
+      border: none;
+    }
+    #generateBtn:hover {
+      background: #3579d9;
+    }
+
+    .quizCard {
+      background: white;
+      margin-top: 15px;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .option-btn {
+      margin: 3px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f5f5f5;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .option-btn.correct {
+      background: #d4edda;
+      border-color: #28a745;
+    }
+    .option-btn.wrong {
+      background: #f8d7da;
+      border-color: #dc3545;
+    }
+    .result-msg {
+      font-weight: 600;
+      margin-top: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #f3f3f3;
+    }
+  </style>
+</head>
+
+<body>
+  <header>📘 AI WikiQuiz — Auto Quiz from Wikipedia</header>
+
+  <nav>
+    <button class="tab-btn active" data-tab="quizTab">🧠 Generate Quiz</button>
+    <button class="tab-btn" data-tab="historyTab">📜 Past Quizzes</button>
+    <button id="clearHistoryBtn">🗑️ Clear History</button>
+  </nav>
+
+  <!-- Generate Quiz Section -->
+  <section id="quizTab" class="active">
+    <h3>Enter Wikipedia Article URL:</h3>
+    <input type="text" id="wikiUrl" placeholder="https://en.wikipedia.org/wiki/Alan_Turing" />
+    <button id="generateBtn">Generate Quiz</button>
+    <div id="quizOutput" style="margin-top: 20px;"></div>
+  </section>
+
+  <!-- Past History Section -->
+  <section id="historyTab">
+    <h3>Past Quiz History</h3>
+    <table id="historyTable">
+      <thead>
+        <tr><th>Title</th><th>URL</th><th>Date</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // Tab Switching
+    const tabs = document.querySelectorAll(".tab-btn");
+    const sections = document.querySelectorAll("section");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(btn => btn.classList.remove("active"));
+        sections.forEach(sec => sec.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>

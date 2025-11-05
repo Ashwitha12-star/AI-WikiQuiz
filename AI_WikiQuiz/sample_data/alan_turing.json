@@ -1,0 +1,36 @@
+{
+  "id": 1,
+  "url": "https://en.wikipedia.org/wiki/Alan_Turing",
+  "title": "Alan Turing",
+  "summary": "Alan Turing was a British mathematician and computer scientist who is widely regarded as the father of theoretical computer science and artificial intelligence.",
+  "key_entities": {
+    "people": ["Alan Turing", "Alonzo Church"],
+    "organizations": ["University of Cambridge", "Bletchley Park"],
+    "locations": ["United Kingdom"]
+  },
+  "sections": ["Early life", "World War II", "Legacy"],
+  "quiz": [
+    {
+      "question": "Where did Alan Turing study?",
+      "options": ["Harvard University", "University of Cambridge", "Oxford University", "Princeton University"],
+      "answer": "University of Cambridge",
+      "difficulty": "easy",
+      "explanation": "Alan Turing studied at King's College, University of Cambridge, where he was awarded first-class honours in mathematics."
+    },
+    {
+      "question": "What was Alan Turing's main contribution during World War II?",
+      "options": ["Atomic research", "Breaking the Enigma code", "Inventing radar", "Developing jet engines"],
+      "answer": "Breaking the Enigma code",
+      "difficulty": "medium",
+      "explanation": "During World War II, Turing played a key role in breaking the Enigma code used by the Germans."
+    },
+    {
+      "question": "What machine concept did Turing propose?",
+      "options": ["Quantum computer", "Analytical engine", "Turing machine", "Logic gate circuit"],
+      "answer": "Turing machine",
+      "difficulty": "medium",
+      "explanation": "He proposed the Turing machine, a mathematical model that laid the foundation of computer science."
+    }
+  ],
+  "related_topics": ["Cryptography", "Enigma machine", "Artificial Intelligence"]
+}
